@@ -1,0 +1,29 @@
+name: run1565 sizing fixture
+# Never runs on its own: workflow_dispatch only. It exists so the runners.io
+# migration wizard has standard, pinned and larger-runner labels to size (RUN-1565).
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo build
+  pinned-2404:
+    runs-on: ubuntu-24.04 # pinned
+    steps:
+      - run: echo pinned
+  jammy:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: echo jammy
+  focal:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo focal
+  heavy:
+    runs-on: ubuntu-8core
+    steps:
+      - run: echo heavy
+  win:
+    runs-on: windows-latest
+    steps:
+      - run: echo win
